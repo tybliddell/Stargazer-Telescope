@@ -1,7 +1,7 @@
 FROM gocv/opencv:4.6.0
 FROM debian:bullseye-20190708-slim
 RUN apt-get update && apt-get install -y curl git jq
-ARG TOKEN='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'
+ARG TOKEN='REDACTED'
 ARG REPO='https://api.github.com/repos/MRHT-SRProject/CamCtrl/releases/latest'
 COPY --from=0 /usr/local/include/ /usr/local/include/
 COPY --from=0 /usr/local/lib /usr/local/lib
