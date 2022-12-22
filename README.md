@@ -28,7 +28,7 @@ Rich Baird - [GitHub link](https://github.com/richbai90)
 [StargazerApp](StargazerApp/) - Flutter app to provide UI for user control\
 [StargazerImageProcessor](StargazerImageProcessor/) - Go ImageProcessor\
 [StargazerServer-AlpacaClient](StargazerServer-AlpacaClient/) - Python server to interface with StargazerApp + client to send requests for AlpacaServer\
-[StargazerSetup](StargazerSetup/) - Creates Docker containers with Docker Compose of all pieces. Also runs setup of system\
+[StargazerSetup](StargazerSetup/) - Creates Docker containers with Docker Compose of all pieces. Also runs setup of system
 
 ## Misc Notes
 This project was a **lot** of work! I am extremely proud of what we created and my entire team for the work we put in. I learned a ridiculous amount in terms of software development, system design, problem solving, teamwork, communication and more.
