@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/rich/code/camcapture/build",
+  "command": "/usr/bin/clang++ -g -o CMakeFiles/SGImgProcessor.dir/main.cpp.o -c /home/rich/code/camcapture/main.cpp",
+  "file": "/home/rich/code/camcapture/main.cpp"
+}
+]

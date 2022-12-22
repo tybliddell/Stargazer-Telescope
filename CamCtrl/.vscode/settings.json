@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "libraw.h": "c",
+        "libraw_types.h": "c",
+        "in.h": "c"
+    }
+}

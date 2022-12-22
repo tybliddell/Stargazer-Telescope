@@ -1,0 +1,68 @@
+services:
+  stargazer:
+    restart: always
+    depends_on:
+      - redis
+      - camcapture
+    build: ./stargazer
+    privileged: true
+    ports:
+      - "2100:2100"
+      - "8000:8000"
+    devices:
+      - "/dev/serial0:/dev/ttyS0"
+      - "/dev/ttyAMA1:/dev/ttyAMA1"
+    environment:
+      - FILLER=0
+      - SKIP_TELESCOPE=0
+      #- SKIP_CAMERA=0
+      - SKIP_SWARM_PICO_SETUP=0
+      - SKIP_GPS_DATA_REQ=0
+    networks:
+      - SG
+  camcapture:
+    tty: true
+    restart: always
+    privileged: true
+    depends_on:
+      redis:
+        condition: service_healthy
+    build: 
+      context: ./camcapture
+      args:
+        - COMMIT_HASH=d1be976
+    environment:
+      #- SKIP_CAM_CONNECT=0
+      #- DEBUG=0
+      - REDIS_URL=redis:6379
+    networks:
+      - SG
+  image_processor:
+    tty: true
+    restart: always
+    environment:
+      - REDIS_URL=redis:6379
+      - CORRELATION_THRESHOLD=1e-2
+      - CORRELATION_ITERATIONS=10
+    depends_on:
+      - redis
+    build: 
+      context: ./image_processor
+      args:
+        - COMMIT_HASH=f345461
+    networks:
+      - SG
+  redis:
+    restart: always
+    image: redis:latest
+    networks:
+      - SG  
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 2s
+      timeout: 5s
+      retries: 20    
+
+networks:
+  # The presence of these objects is sufficient to define them
+  SG: {}

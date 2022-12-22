@@ -1,0 +1,5 @@
+django
+pyserial
+skyfield
+redis
+numpy

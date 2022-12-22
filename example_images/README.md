@@ -1,0 +1,1 @@
+Example images taken from the project are located here. Will be updated as more are taken (during warmer weather!)

@@ -1,0 +1,9 @@
+skyfield
+pytz
+astropy
+numpy
+requests
+pandas
+pyserial
+redis
+# May need! python-dateutil

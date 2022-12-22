@@ -1,0 +1,12 @@
+{
+    "name": "MotorController",
+    "stubs": {},
+    "dev-packages": {
+        "micropy-cli": "*"
+    },
+    "packages": {},
+    "config": {
+        "vscode": true,
+        "pylint": true
+    }
+}
